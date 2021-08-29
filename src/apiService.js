@@ -1,10 +1,10 @@
-import { alert, info, error, defaultModules } from '@pnotify/core/dist/PNotify';
+import { alert, info, error, defaultModules } from '../node_modules/@pnotify/core/dist/PNotify';
 
 function fetchPicture(requestAddress) {
   return fetch(requestAddress)
     .then(response => {
       if (response.status === 404) {
-        error('No country founded, please try another approach');
+        error('Nothing found');
       }
       return response.json();
     })
