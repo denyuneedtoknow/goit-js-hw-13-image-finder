@@ -12,12 +12,13 @@ function morePictureLoader() {
 
 function renderRequest(e) {
   e.preventDefault();
-  refs.gallery.scrollIntoView({
-    behavior: 'smooth',
-    block: 'end',
-  });
+
   const input = String(refs.inputField[0].value);
   const request = `${refs.API_URL}${input}&page=${pageNumber}&per_page=12&key=${refs.userKey}`;
+  if (input === '') {
+    alert('Enter your request')
+    return
+  }
   fetchPicture(request)
     .then(pictures => {
       const picArray = pictures.hits;
@@ -29,8 +30,12 @@ function renderRequest(e) {
       pageNumber++;
       if (picArray.length > 0) {
         morePictureLoader();
-      } else {
-        info('nothing');
+        refs.gallery.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+        });
+      } else if (picArray.length === 0) {
+        alert('nothing found')
       }
     })
     .catch(err => {
@@ -38,9 +43,16 @@ function renderRequest(e) {
     });
 }
 
-refs.gallery.addEventListener('click', modalOpener);
+function onClickOpener(e) {
+  if (e.target.hasAttribute('alt')) {
+    modalOpener(e)
+  }
+}
+
+
+
+refs.gallery.addEventListener('click', onClickOpener);
 refs.searchBtn.addEventListener('click', renderRequest);
-// refs.searchBtn.addEventListener('click', morePictureLoader);
 refs.loadMoreBtn.addEventListener('click', renderRequest);
 window.addEventListener('keydown', onEscapeClose);
 refs.modalWindow.addEventListener('click', modalWindowCloser);
