@@ -17,6 +17,14 @@ img {
   width: 100%;
   height: auto;
 }
+
+.header {
+  background-image: url(./images/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 720px;
+}
+
 .load-more,
 .restart {
   display: flex;
@@ -25,17 +33,29 @@ img {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  background-color: #50f10f;
+  border-color: aliceblue;
+  color: white;
+  border-radius: 4px;
 }
 .is-hidden {
   display: none;
+}
+#search-btn {
+  margin-left: 10px;
+  background-color: #50f10f;
+  border-color: aliceblue;
+  border-radius: 4px;
+  color: white;
+}
+.option-buttons {
+  display: flex;
 }
 
 .search-form {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 80px;
 }
 
 .gallery {

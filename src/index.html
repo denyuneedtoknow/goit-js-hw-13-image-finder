@@ -21,21 +21,20 @@
 
 </head>
 <body>
-    <form class="search-form" id="search-form">
-  <input
-    type="text"
-    name="query"
-    autocomplete="off"
-    placeholder="Search images..."
-  />
-  <button type="submit" id="search-btn">Find</button>
-</form>
+<header class="header">
+  <form class="search-form" id="search-form">
+    <input type="text" name="query" autocomplete="off" placeholder="Search images..." />
+    <button type="submit" id="search-btn">Find</button>
+  </form>
+</header>
 <div class="render-section">
   <ul class="gallery">
-  <!-- Список <li> с карточками изображений -->
+
 </ul>
-<button type="submit" class="load-more is-hidden">Load more</button>
-<button type="submit" class="restart is-hidden">New Search</button>
+<div class="option-buttons">
+  <button type="submit" class="load-more is-hidden">Load more</button>
+  <button type="submit" class="restart is-hidden">New Search</button>
+</div>
 </div>
     <div class="lightbox js-lightbox">
       <div class="lightbox__overlay"></div>
