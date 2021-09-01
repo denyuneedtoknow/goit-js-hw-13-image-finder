@@ -8,5 +8,6 @@ const refs = {
   userKey: '22968833-cf9b798f42870513c2372fa03',
   modalWindow: document.querySelector('.js-lightbox'),
   photo: document.querySelector('.photo-card'),
+  renderSection: document.querySelector('.render-section'),
 };
 export default refs;

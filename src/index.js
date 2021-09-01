@@ -30,7 +30,7 @@ function renderRequest(e) {
       pageNumber++;
       if (picArray.length > 0) {
         morePictureLoader();
-        refs.gallery.scrollIntoView({
+        refs.renderSection.scrollIntoView({
           behavior: 'smooth',
           block: 'end',
         });
