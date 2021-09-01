@@ -9,6 +9,10 @@ let pageNumber = 1;
 function morePictureLoader() {
   refs.loadMoreBtn.classList.remove('is-hidden');
   refs.restartBtn.classList.remove('is-hidden');
+  refs.renderSection.scrollIntoView({
+    behavior: 'smooth',
+    block: 'end',
+  });
 }
 
 function renderRequest(e) {
@@ -31,10 +35,7 @@ function renderRequest(e) {
       pageNumber++;
       if (picArray.length > 0) {
         morePictureLoader();
-        refs.renderSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'end',
-        });
+
       } else if (picArray.length === 0) {
         alert('nothing found')
       }
