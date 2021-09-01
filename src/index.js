@@ -8,6 +8,7 @@ let pageNumber = 1;
 
 function morePictureLoader() {
   refs.loadMoreBtn.classList.remove('is-hidden');
+  refs.restartBtn.classList.remove('is-hidden');
 }
 
 function renderRequest(e) {
@@ -22,7 +23,7 @@ function renderRequest(e) {
   fetchPicture(request)
     .then(pictures => {
       const picArray = pictures.hits;
-      console.log(picArray);
+
       function markup(picArray) {
         return picArray.map(requestedImg).join('');
       }
@@ -49,10 +50,18 @@ function onClickOpener(e) {
   }
 }
 
+function restartSearch() {
+
+  refs.gallery.innerHTML = ''
+  refs.loadMoreBtn.classList.add('is-hidden');
+  refs.restartBtn.classList.add('is-hidden');
+  refs.inputField[0].value = ''
+}
 
 
 refs.gallery.addEventListener('click', onClickOpener);
 refs.searchBtn.addEventListener('click', renderRequest);
+refs.restartBtn.addEventListener('click', restartSearch);
 refs.loadMoreBtn.addEventListener('click', renderRequest);
 window.addEventListener('keydown', onEscapeClose);
 refs.modalWindow.addEventListener('click', modalWindowCloser);
