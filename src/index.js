@@ -34,7 +34,10 @@ function renderRequest(e) {
       refs.gallery.insertAdjacentHTML('beforeEnd', `${markup(picArray)}`);
       pageNumber++;
       if (picArray.length > 0) {
-        morePictureLoader();
+        const lastImage = refs.gallery.lastChild.querySelector('img')
+        lastImage.addEventListener('load', () => {
+          morePictureLoader()
+        })
 
       } else if (picArray.length === 0) {
         alert('nothing found')

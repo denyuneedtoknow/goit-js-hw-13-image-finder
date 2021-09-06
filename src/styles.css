@@ -50,6 +50,9 @@ body {
   background-size: cover;
   height: 720px;
   position: relative;
+  box-shadow: 10px 14px 30px -2px rgba(13, 117, 197, 0.2);
+  border-radius: 14px;
+  margin-top: 20px;
 }
 
 .load-more,
@@ -60,7 +63,7 @@ body {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #50f10f;
+  background-color: #06cddc;
   border-color: aliceblue;
   color: white;
   border-radius: 4px;
@@ -70,7 +73,7 @@ body {
 }
 #search-btn {
   margin-left: 10px;
-  background-color: #50f10f;
+  background-color: #06cddc;
   border-color: aliceblue;
   border-radius: 4px;
   color: white;
@@ -108,11 +111,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 5px;
   padding: 3px;
   justify-content: space-between;
   height: fit-content;
+  background-color: slategray;
+}
+
+.photo-card:hover,
+.photo-card:focus {
+  box-shadow: 10px 14px 30px -2px rgba(13, 117, 197, 0.9);
+  background-color: #06cddc;
 }
 .material-icons {
   color: white;
