@@ -63,19 +63,37 @@ body {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #06cddc;
-  border-color: aliceblue;
-  color: white;
+  background-color: white;
+  border-color: slategray;
+  color: slategray;
   border-radius: 4px;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.load-more:focus,
+.restart:focus,
+.load-more:hover,
+.restart:hover {
+  background-color: #06cddc;
+  color: white;
+}
+
 .is-hidden {
   display: none;
 }
 #search-btn {
   margin-left: 10px;
-  background-color: #06cddc;
-  border-color: aliceblue;
+  background-color: white;
+  border-color: slategray;
   border-radius: 4px;
+  color: slategray;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#search-btn:hover,
+#search-btn:focus {
+  background-color: #06cddc;
   color: white;
 }
 .option-buttons {
@@ -117,6 +135,7 @@ body {
   justify-content: space-between;
   height: fit-content;
   background-color: slategray;
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .photo-card:hover,
@@ -126,11 +145,32 @@ body {
 }
 .material-icons {
   color: white;
+  padding-right: 3px;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.photo-card:hover .material-icons,
+.photo-card:focus .material-icons {
+  color: slategray;
+}
+.photo-card:hover .stats,
+.photo-card:focus .stats {
+  box-shadow: inset 2px 1px 4px black;
+  border-radius: 2px;
+}
+.photo-card:hover .stats-item,
+.photo-card:focus .stats-item {
+  color: slategray;
+}
+
 .stats-item {
   color: white;
-  margin: 0;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 /* Lightbox */
 .lightbox {
   display: flex;
@@ -143,7 +183,7 @@ body {
   height: 100vh;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--animation-duration) var(--timing-function);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .lightbox.is-open {
